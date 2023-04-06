@@ -51,6 +51,11 @@ export class ChatOptions {
   }
 }
 
+export class previousResponse {
+  response: string
+  messageId: string
+}
+
 export class ChatInfo {
   _id: ObjectId
   roomId: number
@@ -60,6 +65,7 @@ export class ChatInfo {
   response?: string
   status: Status = Status.Normal
   options: ChatOptions
+  previousResponse?: previousResponse[]
   constructor(roomId: number, uuid: number, prompt: string, options: ChatOptions) {
     this.roomId = roomId
     this.uuid = uuid
